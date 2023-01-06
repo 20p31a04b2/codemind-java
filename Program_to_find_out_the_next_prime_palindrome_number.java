@@ -1,6 +1,23 @@
-import java.util.Scanner;
-class prime
+import java.util.*;
+class palindrome
 {
+    public static boolean ispalindrome(int n)
+    {
+        int temp=n;
+        int sum=0,r;
+        while(n>0)
+        {
+            r=n%10;
+            sum=sum*10+r;
+            n=n/10;
+            
+        }
+        if(temp==sum)
+         return true;
+        else
+         return false;
+         
+    }
     public static boolean isprime(int n)
     {
         int count=0;
@@ -8,28 +25,11 @@ class prime
         {
             if(n%i==0)
             count++;
-            
         }
         if(count==0)
-        return true;
+          return true;
         else
-        return false;
-    }
-    public static boolean ispalindrome(int m)
-    {
-        int temp=m;
-        int sum=0,r;
-        while(m>0)
-        {
-          r=m%10;
-          sum=sum*10+r;
-          m=m/10;
-          
-        }
-        if(temp==sum)
-        return true;
-        else
-        return false;
+          return false;
     }
     public static void main(String args[])
     {
@@ -38,11 +38,13 @@ class prime
         n=sc.nextInt();
         for(i=n+1;;i++)
         {
-            if(isprime(i) && ispalindrome(i))
+            if(isprime(i)&&ispalindrome(i))
             {
                 System.out.println(i);
                 break;
+                
             }
         }
+        
     }
 }
